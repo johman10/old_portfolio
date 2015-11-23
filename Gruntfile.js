@@ -10,12 +10,12 @@ module.exports = function(grunt) {
     compass: {
       dist: {
         options: {
-          sassDir: 'style/scss',
-          specify: 'style/scss/main.scss',
-          cssDir: 'style/css',
-          imagesDir: 'img',
-          javascriptsDir: 'js',
-          fontsDir: 'style/fonts',
+          sassDir: '*/style/scss',
+          specify: '*/style/scss/main.scss',
+          cssDir: '*/style/css',
+          imagesDir: '*/img',
+          javascriptsDir: '*/js',
+          fontsDir: '*/style/fonts',
           outputStyle: 'compressed',
           relativeAssets: true
           // watch: true
@@ -33,8 +33,8 @@ module.exports = function(grunt) {
     },
     modernizr: {
       "dist": {
-        "devFile": 'js/modules/modernizr.js',
-        "outputFile": 'js/modules/build-modernizr.js',
+        "devFile": '*/js/modules/modernizr.js',
+        "outputFile": '*/js/modules/build-modernizr.js',
         "parseFiles": true,
         "files" : {
           "src": [
