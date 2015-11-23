@@ -1,0 +1,167 @@
+.project_body {
+  overflow-x: hidden;
+}
+
+.project_background {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: 50% 0;
+
+  &.justab_background {
+    background-image: image-url('justab/screen.png')
+  }
+
+  &.connect_background {
+    background-image: image-url('connect/screen.png')
+  }
+
+  &.serve_background {
+    background-image: image-url('serve/screen.png')
+  }
+
+  &.shelter_background {
+    background-image: image-url('shelter/screen.png')
+  }
+
+  &.beauty_background {
+    background-image: image-url('beauty/screen.png')
+  }
+}
+
+.project_description {
+  position: absolute;
+  right: -400px;
+  top: 0;
+  height: 100vh;
+  width: 400px;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, .6);
+  color: $white;
+
+  .project_description_content {
+    margin: 20px 20px 100px;
+  }
+
+  .cssanimations & {
+    @include animation("expandDescription" .5s ease .5s forwards);
+  }
+
+  @include keyframes("expandDescription") {
+    0% {
+      right: -400px;
+    }
+    100% {
+      right: 0;
+    }
+  }
+
+  .cssanimations &.reverse {
+    @include animation("collapseDescription" .5s ease forwards);
+  }
+
+  @include keyframes("collapseDescription") {
+    0% {
+      right: 0;
+    }
+    100% {
+      right: -400px;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  a {
+    color: $white;
+    background-color: $background-color;
+    text-decoration: none;
+    transition: background-color .3s ease, color .3s ease;
+    padding-left: 3px;
+
+    &:hover {
+      color: $background-color;
+      background-color: $white;
+    }
+  }
+}
+
+.project_link_container {
+  position: fixed;
+  bottom: 0;
+  width: 400px;
+
+  .project_home_link {
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+  }
+
+  .project_prev_link {
+    float: left;
+  }
+
+  .project_next_link {
+    float: right;
+  }
+
+  .project_prev_link,
+  .project_next_link {
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    width: 50%;
+    height: 40px;
+
+    &.inactive {
+      background-color: $background-color;
+      color: $background-color;
+    }
+  }
+}
+
+@media screen and ($width-name : $landscape-width) {
+  .project_background {
+    position: fixed;
+  }
+  .project_description {
+    top: initial;
+    right: 0;
+    bottom: 100px;
+    height: auto;
+    width: 100%;
+    background-color: $white;
+    color: $black;
+    transform: translateY(100%);
+
+    .project_description_content {
+      margin: 20px;
+    }
+
+    .cssanimations & {
+      animation: none;
+    }
+
+    .cssanimations &.reverse {
+      animation: none;
+    }
+  }
+
+  .project_link_container {
+    position: relative;
+    bottom: auto;
+    width: auto;
+  }
+}

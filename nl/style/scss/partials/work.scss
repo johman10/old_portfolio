@@ -1,0 +1,174 @@
+.content_container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  background-color: $white;
+
+  .cssanimations & {
+    @include animation("workReplace" 1s ease 2.5s forwards);
+  }
+
+  &.end {
+    animation: none;
+    height: auto;
+    bottom: -480px;
+    opacity: 1;
+  }
+
+  @include keyframes("workReplace") {
+    0% {
+      bottom: -530px;
+    }
+    100% {
+      height: auto;
+      bottom: -480px;
+      opacity: 1;
+    }
+  }
+
+  .work_container {
+    width: 750px;
+    margin: 0 auto;
+  }
+
+  .work_last_row {
+    position: relative;
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  .project_block {
+    position: relative;
+    float: left;
+    width: 250px;
+    height: 200px;
+    background-repeat: no-repeat;
+
+    .work_link {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 100;
+    }
+
+    .work_hover_background {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: $black;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    .work_hover_text {
+      position: relative;
+      width: 100%;
+      padding: 12.5%;
+      color: $white;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity .3s ease;
+      line-height: 1.2;
+
+      h2 {
+        margin-bottom: 5px;
+      }
+
+      hr {
+        border: solid 1px $background-color;
+        width: 30px;
+      }
+    }
+
+    &:hover .work_hover_background {
+      opacity: .6;
+    }
+
+    &:hover .work_hover_text {
+      opacity: 1;
+    }
+  }
+
+  .justab {
+    background: image-url('justab/logo.png') $white no-repeat 50% 50%;
+  }
+
+  .lets_connect {
+    background: image-url('connect/logo.png') $white no-repeat 50% 50%;
+  }
+
+  .serve_72 {
+    background: image-url('serve/logo.png') no-repeat 50% 50%;
+  }
+
+  .shelter_ministries {
+    background: image-url('shelter/logo.png') no-repeat 50% 50%;
+  }
+
+  .beauty_unique {
+    background: image-url('beauty/logo.png') no-repeat 50% 50%;
+    background-size: 90% auto;
+  }
+}
+
+@media screen and ($width-name : $landscape-width) {
+  .content_container {
+    .cssanimations & {
+      @include animation("workReplace" 1s ease 2.5s forwards);
+    }
+
+    &.end {
+      animation: none;
+      height: auto;
+      bottom: -1080px;
+      opacity: 1;
+    }
+
+    @include keyframes("workReplace") {
+      0% {
+        bottom: -1130px;
+      }
+      100% {
+        height: auto;
+        bottom: -1080px;
+        opacity: 1;
+      }
+    }
+
+    .work_container {
+      width: 479px;
+    }
+
+    .work_last_row {
+      width: 479px;
+    }
+
+    .project_block {
+      position: relative;
+      margin: 0 auto;
+      width: 250px;
+      height: 200px;
+      float: none;
+    }
+  }
+}
+
+@media screen and ($width-name : $portrait-width) {
+  .content_container {
+    .work_container {
+      width: 100%;
+    }
+
+    .work_last_row {
+      width: 100%;
+    }
+  }
+}
