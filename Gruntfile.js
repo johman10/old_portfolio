@@ -18,7 +18,7 @@ module.exports = function(grunt) {
           fontsDir: 'style/fonts',
           outputStyle: 'compressed',
           relativeAssets: true,
-          watch: true
+          // watch: true
         }
       }
     },
