@@ -1,4 +1,27 @@
 $(document).ready(function() {
+  currentPath = window.location.pathname;
+  currentPath = currentPath.replace('/', '');
+  businesses = { thoughtbot: '#C32F34', spotify: '#2ebd59' };
+
+  if ((!localStorage.current_color || localStorage.current_color === undefined) && businesses[currentPath]) {
+    localStorage.current_color = businesses[currentPath];
+  }
+
+  if ((!localStorage.current_name || localStorage.current_name === undefined) && businesses[currentPath]) {
+    localStorage.current_name = currentPath;
+  }
+
+  if (localStorage.current_color) {
+    $('html').attr('data-color', localStorage.current_color);
+  }
+
+  if (localStorage.current_name) {
+    oldValue = $('.home_header').html();
+    current_name = localStorage.current_name;
+    newValue = oldValue.replace('.', '') + current_name.substr(0,1).toUpperCase() + current_name.substr(1) + '.';
+    $('.home_header').html(newValue);
+  }
+
   $('body').css('display', 'none');
 
   if (sessionStorage.animationDone) {

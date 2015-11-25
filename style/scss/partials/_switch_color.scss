@@ -1,0 +1,71 @@
+html[data-color='#C32F34'] {
+  background-color: #C32F34;
+
+  .home_header {
+    font-size: 95px;
+  }
+
+  hr {
+    border: solid 1px #C32F34 !important;
+  }
+
+  @media screen and ($width-name : $landscape-width) {
+    .home_container {
+      height: 320px;
+
+      .home_header {
+        font-size: 50px;
+      }
+
+      .home_paragraph {
+          margin: 130px 0 0 8px;
+      }
+    }
+  }
+
+  .project_description a {
+    color: $white;
+    background-color: #C32F34;
+
+    &:hover {
+        color: #C32F34;
+        background-color: $white;
+    }
+  }
+}
+
+html[data-color='#2ebd59'] {
+  background-color: #2ebd59;
+
+  .home_header {
+    font-size: 95px;
+  }
+
+  hr {
+    border: solid 1px #2ebd59 !important;
+  }
+
+  @media screen and ($width-name : $landscape-width) {
+    .home_container {
+      height: 320px;
+
+      .home_header {
+        font-size: 50px;
+      }
+
+      .home_paragraph {
+          margin: 130px 0 0 8px;
+      }
+    }
+  }
+
+  .project_description a {
+    color: $white;
+    background-color: #2ebd59;
+
+    &:hover {
+        color: #2ebd59;
+        background-color: $white;
+    }
+  }
+}
